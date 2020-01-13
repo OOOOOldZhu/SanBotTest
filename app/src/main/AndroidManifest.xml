@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.z.sanbottest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.Camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--        <activity android:name=".mine.ClearActivity"/>-->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- 此应用申请麦克风 -->
+            <meta-data
+                android:name="CONFIG_RECORD"
+                android:value="true" />
+            <!-- 触发头部无响应 -->
+            <meta-data
+                android:name="FORBID_TOUCH"
+                android:value="true" />
+            <!-- 背部PIR触发无响应 -->
+            <meta-data
+                android:name="FORBID_PIR"
+                android:value="true" />
+            <!-- 语音唤醒无响应 -->
+            <meta-data
+                android:name="FORBID_WAKE_RESPONSE"
+                android:value="true" />
+        </activity>
+
+        <service
+            android:name="AiService"
+            android:enabled="true"
+            android:exported="true"
+            android:persistent="false">
+
+            <!-- 此应用申请麦克风 -->
+            <meta-data
+                android:name="CONFIG_RECORD"
+                android:value="true" />
+            <!-- 触发头部无响应 -->
+            <meta-data
+                android:name="FORBID_TOUCH"
+                android:value="true" />
+            <!-- 背部PIR触发无响应 -->
+            <meta-data
+                android:name="FORBID_PIR"
+                android:value="true" />
+            <!-- 语音唤醒无响应 -->
+            <meta-data
+                android:name="FORBID_WAKE_RESPONSE"
+                android:value="true" />
+        </service>
+    </application>
+
+</manifest>
