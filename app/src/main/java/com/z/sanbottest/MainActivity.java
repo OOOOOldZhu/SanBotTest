@@ -11,6 +11,7 @@ import com.sanbot.opensdk.base.BindBaseActivity;
 
 public class MainActivity extends BindBaseActivity {
 
+    private String TAG = MyTAG.FLAG;
     private Intent intent;
 
     @Override
@@ -34,7 +35,6 @@ public class MainActivity extends BindBaseActivity {
 //        stopService(intent);
     }
 
-    private String TAG = "zhu";
     @Override
     protected void onMainServiceConnected() {
         Log.i(TAG, "onMainServiceConnected: ");
